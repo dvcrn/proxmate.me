@@ -10,5 +10,5 @@ describe 'Service: config', () ->
   beforeEach inject (_config_) ->
     config = _config_
 
-  it 'should do something', () ->
+  it 'should be an object', () ->
     expect(typeof config).toBe 'object'
