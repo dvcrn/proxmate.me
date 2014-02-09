@@ -39,5 +39,61 @@
   // "foundation/scss/foundation/components/offcanvas",
   "foundation/scss/foundation/components/visibility";
 
+body {
+	background: #eee;
+}
 
+.topstage {
+	text-align: center;
+	background-color: white;
+	background: url('../images/dotted-worldmap.png') white;
+	background-size: 960px;
+	background-position: center;
+	background-repeat: no-repeat;
 
+	height: 400px;
+	position: relative;
+	display: table;
+	box-shadow: inset 0 -5px 20px #8c8c8c;
+	border-bottom: 1px black dotted;
+
+	.text {
+		vertical-align: middle;
+		display: table-cell;
+	}
+}
+.overview {
+	hr {
+		border: dotted 1px grey;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	h3 {
+		margin: 10px 0;
+		text-align: center;
+	}
+}
+.guide {
+	.step {
+		text-align: center;
+	}
+}
+
+.features {
+	.feature {
+		text-align: center;
+		margin: 10px 0;
+		min-height: 350px;
+
+		.teaser {
+			font-weight: bold;
+		}
+	}
+}
+
+footer {
+	color: lightgrey;
+	background: grey;
+	text-align: center;
+}
