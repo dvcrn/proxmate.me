@@ -1,0 +1,52 @@
+<section class="packages row">
+
+	<h2>Welcome to the package browser!</h2>
+	<p>ProxMate has by default no packages installed. Feel free to browser around and poke what interests you :)</p>
+	<p>Packages listed here are either created or approved by the ProxMate team.</p>
+
+	<h3>Available Packages</h3>
+	<hr>
+	<div class="package-listing row">
+		<div class="package" ng-repeat="package in packages">
+			<a href="/#/package/{{ package.id }}">
+				<img src="{{ package.icon }}">
+				<p>{{ package.name }}</p>
+			</a>
+		</div>
+
+		<div class="package" ng-repeat="package in packages">
+			<a href="#">
+				<img src="{{ package.icon }}">
+				<p>{{ package.name }}</p>
+			</a>
+		</div>
+
+		<div class="package" ng-repeat="package in packages">
+			<a href="#">
+				<img src="{{ package.icon }}">
+				<p>{{ package.name }}</p>
+			</a>
+		</div>
+
+		<div class="package" ng-repeat="package in packages">
+			<a href="#">
+				<img src="{{ package.icon }}">
+				<p>{{ package.name }}</p>
+			</a>
+		</div>
+
+		<div class="package" ng-repeat="package in packages">
+			<a href="#">
+				<img src="{{ package.icon }}">
+				<p>{{ package.name }}</p>
+			</a>
+		</div>
+
+		<div class="package" ng-repeat="package in packages">
+			<a href="#">
+				<img src="{{ package.icon }}">
+				<p>{{ package.name }}</p>
+			</a>
+		</div>
+	</div>
+</section>

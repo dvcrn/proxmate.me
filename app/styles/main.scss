@@ -127,3 +127,46 @@ footer {
 	background: grey;
 	text-align: center;
 }
+
+.packages {
+
+}
+
+.package {
+	display: inline-block;
+	box-shadow: 0 0 8px #bdbdbd;
+	background: rgba(200, 200, 200, 0.5);
+	margin: 5px;
+
+	a {
+		width: 260px;
+		color: black;
+		padding: 0px 10px;
+		display: table;
+		line-height: 60px;
+
+		img {
+			display: inline-block;
+			min-height: 50px;
+			min-width: 50px;
+		}
+
+		p {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+
+.package-listing {
+
+}
+
+.package:hover {
+	box-shadow: 0 0 10px #428cc0;
+}
+
+.packageIcon {
+	position: absolute;
+	right: 0;
+}

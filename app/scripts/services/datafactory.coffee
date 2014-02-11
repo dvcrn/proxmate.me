@@ -12,5 +12,8 @@ angular.module('proxmatemeApp')
 
       getPackages: (callback) ->
         $http.get("#{config.API_HOST}/package/list.json").success(callback)
+
+      getPackage: (id, callback) ->
+        $http.get("#{config.API_HOST}/package/#{id}.json").success(callback)
     }
   ]

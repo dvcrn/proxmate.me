@@ -18,12 +18,21 @@ describe 'Service: dataFactory', () ->
     # Overwrite API host so we can test it
     config.API_HOST = 'google.de'
 
-    $httpBackend.when('GET', 'google.de/package/list.json').respond({});
+    $httpBackend.when('GET', 'google.de/package/list.json').respond({})
+    $httpBackend.when('GET', 'google.de/package/123.json').respond({})
 
-  it 'should call the server api and execute callback', () ->
+  it 'getPackages should call the server api and execute callback', () ->
     $httpBackend.expectGET('google.de/package/list.json').respond(200)
     spy = jasmine.createSpy()
     dataFactory.getPackages(spy)
+    $httpBackend.flush()
+
+    expect(spy).toHaveBeenCalled()
+
+  it 'getPackage should call the detail url and execute callback', () ->
+    $httpBackend.expectGET('google.de/package/123.json').respond(200)
+    spy = jasmine.createSpy()
+    dataFactory.getPackage('123', spy)
     $httpBackend.flush()
 
     expect(spy).toHaveBeenCalled()
