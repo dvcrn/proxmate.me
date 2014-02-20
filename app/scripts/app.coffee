@@ -6,7 +6,9 @@ angular.module('proxmatemeApp', [
   'ngSanitize',
   'ngRoute'
 ])
-  .config ($routeProvider) ->
+  .config ($locationProvider, $routeProvider) ->
+    $locationProvider.hashPrefix('!')
+
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'

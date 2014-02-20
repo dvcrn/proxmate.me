@@ -1,6 +1,68 @@
 <section class="row">
-	<p>This is the detail view for {{ packageData.name }}</p>
-	<p>
-		{{ packageData.description }}
-	</p>
+	<div class="small-12 columns">
+		<h2>Package Info</h2>
+		<div class="show-for-small-only mobile-infobox">
+			<p>Hey there! You are viewing the mobile website of this package.</p>
+			<p><strong>To install, please come back with a PC.</strong></p>
+		</div>
+	</div>
+	<hr>
+	<div class="sidebar show-for-medium-up medium-3 columns">
+		<img src="{{ packageData.bigIcon }}" alt="">
+		<hr>
+		<a href="" class="installbutton" packageid="{{ packageData.id }}">No ProxMate installed</a>
+		<hr>
+		<h5>About this package</h5>
+		<div class="shortinfo">
+			<ul>
+				<li>Country: <span><img src="{{ packageData.country.flag }}" alt=""></span></li>
+				<li>Author: <span>{{ packageData.user.username }}</span></li>
+				<li>Version: <span>{{ packageData.version }}</span></li>
+			</ul>
+		</div>
+		<hr>
+		<div class="info">
+			<h5>Host matches</h5>
+			<ul>
+				<li ng-repeat="host in packageData.hosts">{{ host }}</li>
+			</ul>
+		</div>
+		<hr>
+		<div class="info">
+			<h5>Proxy rules</h5>
+			<ul>
+				<li ng-repeat="domain in packageData.touchedDomains">{{ domain }}</li>
+			</ul>
+		</div>
+	</div>
+	<div class="medium-9 columns">
+		<a href="" class="show-for-medium-up installbutton" packageid="{{ packageData.id }}">No ProxMate installed</a>
+		<h3>{{ packageData.name }}</h3>
+		<p class="sub">Website at <a href="{{ packageData.pageUrl }}">{{ packageData.pageUrl }}</a></p>
+		<p>
+			{{ packageData.description }}
+		</p>
+		<div>
+			<img src="{{ packageData.screenshots[0] }}" alt="">
+		</div>
+	</div>
+</section>
+<section class="row">
+	<div class="small-12 columns">
+	<h4>Tell us what you think!</h4>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	        var disqus_shortname = 'proxmate-dev'; // required: replace example with your forum shortname
+
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
 </section>

@@ -1,12 +1,12 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="proxmatemeApp" ng-controller="TitleCtrl"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="proxmatemeApp" ng-controller="TitleCtrl"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="proxmatemeApp" ng-controller="TitleCtrl"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="proxmatemeApp" ng-controller="TitleCtrl"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>{{ Page.title }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="proxmatemeApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -34,16 +34,16 @@
         <div class="small-12 medium-5 columns">
           <ul>
             <li class="current">
-              <a href="/#/">Download</a>
+              <a href="/#!/">Download</a>
             </li>
             <li class="">
-              <a href="/#/packages">Packages</a>
+              <a href="/#!/packages">Packages</a>
             </li>
             <li class="">
-              <a href="/#/about">About</a>
+              <a href="/#!/about">About</a>
             </li>
             <li class="">
-              <a href="/#/donate">Donate</a>
+              <a href="/#!/donate">Donate</a>
             </li>
           </ul>
         </div>
@@ -92,6 +92,8 @@
         <script src="scripts/services/dataFactory.js"></script>
         <script src="scripts/controllers/packages.js"></script>
         <script src="scripts/controllers/detail.js"></script>
+        <script src="scripts/services/Page.js"></script>
+        <script src="scripts/controllers/title.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -2,5 +2,5 @@
 
 angular.module('proxmatemeApp')
   .constant 'config', {
-    'API_HOST': 'http://127.0.0.1:3000'
+    'API_HOST': 'http://api.proxmate.me'
   }
