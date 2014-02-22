@@ -20,7 +20,7 @@
 //   "foundation/scss/foundation/components/keystrokes",
 //   "foundation/scss/foundation/components/labels",
 //   "foundation/scss/foundation/components/magellan",
-//   "foundation/scss/foundation/components/orbit",
+  "foundation/scss/foundation/components/orbit",
 //   "foundation/scss/foundation/components/pagination",
 //   "foundation/scss/foundation/components/panels",
 //   "foundation/scss/foundation/components/pricing-tables",
@@ -227,4 +227,34 @@ footer {
 	border: dotted 1px red;
 	padding: 10px;
 	background: white;
+}
+
+.loading-indicator-wrapper {
+	position: relative;
+	text-align: center;
+
+	p {
+		position: relative;
+		top: 15px;
+	}
+
+	.loading-indicator {
+		display: block;
+		width: 40px;
+		height: 40px;
+		top: 50%;
+		left: 50%;
+		margin: 10px auto;
+		border: solid 3px;
+		border-color: #555555 #eee;
+		border-radius: 1000px;
+		-webkit-animation-name: rotate;
+		-webkit-animation-duration: 1.5s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		animation-name: rotate;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
 }

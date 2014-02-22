@@ -33,23 +33,30 @@
         </div>
         <div class="small-12 medium-5 columns">
           <ul>
-            <li class="current">
+            <li ng-class="{current: Page.section == 'home'}">
               <a href="/#!/">Download</a>
             </li>
-            <li class="">
+            <li ng-class="{current: Page.section == 'packages'}">
               <a href="/#!/packages">Packages</a>
             </li>
-            <li class="">
+            <li ng-class="{current: Page.section == 'about'}">
               <a href="/#!/about">About</a>
             </li>
-            <li class="">
+            <li ng-class="{current: Page.section == 'donate'}">
               <a href="/#!/donate">Donate</a>
             </li>
           </ul>
         </div>
       </div>
     </header>
-      <section class="container" ng-view=""></section>
+    <div ng-show="Page.isLoading" class="row">
+      <div class="loading-indicator-wrapper small-12">
+        <p>{{ Page.loadingText }}</p>
+        <div class="loading-indicator"></div>
+      </div>
+    </div>
+
+    <section ng-hide="Page.isLoading" class="container" ng-view=""></section>
     <footer class="small-12">
       <p>ProxMate is brought to you by David Mohl</p>
     </footer>

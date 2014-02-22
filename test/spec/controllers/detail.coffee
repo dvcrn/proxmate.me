@@ -11,6 +11,9 @@ describe 'Controller: DetailCtrl', () ->
   config = {}
   dataFactory = {}
   getPackageSpy = {}
+
+  pageMethods = ['setTitle', 'setSection', 'startLoading', 'finishLoading']
+  pageSpy = jasmine.createSpyObj('page', pageMethods)
   testPackage = {
     "name": "Test Package 2",
     "description": "Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.",
@@ -66,7 +69,8 @@ describe 'Controller: DetailCtrl', () ->
     scope = $rootScope.$new()
     DetailCtrl = $controller 'DetailCtrl', {
       $scope: scope
-      $routeParams: routeParamMock
+      $routeParams: routeParamMock,
+      Page: pageSpy
     }
 
   it 'should call dataFactory with the routing param', () ->
@@ -75,4 +79,8 @@ describe 'Controller: DetailCtrl', () ->
   it 'should fill the scope with packageData', () ->
     expect(scope.packageData).toBe testPackage
 
+  it 'should change the page body correctly', () ->
+    for pageMethod in pageMethods
+      expect(pageSpy[pageMethod]).toHaveBeenCalled()
 
+    expect(pageSpy.setTitle).toHaveBeenCalledWith('Test Package 2 proxy package')

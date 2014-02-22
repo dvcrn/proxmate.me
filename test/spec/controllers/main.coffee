@@ -8,12 +8,17 @@ describe 'Controller: MainCtrl', () ->
   MainCtrl = {}
   scope = {}
 
+  pageMethods = ['setTitle', 'setSection']
+  page = jasmine.createSpyObj('page', pageMethods)
+
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
     MainCtrl = $controller 'MainCtrl', {
-      $scope: scope
+      $scope: scope,
+      Page: page
     }
 
-  it 'should attach a list of awesomeThings to the scope', () ->
-    expect(scope.awesomeThings.length).toBe 3
+  it 'should change the page content correctly', () ->
+    for pageMethod in pageMethods
+      expect(page[pageMethod]).toHaveBeenCalled()
