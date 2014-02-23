@@ -8,14 +8,14 @@ before_script:
 - gem install compass
 - npm install -g bower grunt-cli
 - bower install
-before_deploy: grunt build
+before_deploy: "grunt build"
 deploy:
   provider: s3
-  access_key_id:
-    secure: Z2yPo0b3S9K0pywA5DBhNdThdw1cwclSjEAWPKZw9xMXIsHXMoA4AONatmal5PRiOrjnonHKkS2nBjjLvIXrwC25KcBHaX3sDKFL0axNFD6swL0xpo3LrlUVcYYy4hgHcEErBgQBWblEWAv67ZrELlT05Rg8dh4BC6NSb9q8FW0=
+  access_key_id: AKIAJLDXXQGNDUKUM3PA
   secret_access_key:
-    secure: DVq3BddczpzOYNBI64HqtCv1Or3UNgzkCDTjHe6Fvh/+TisKAir4o5xqaCvXj1ehKC3rtKvHZMvGMEfnVQrNuJCjXleVYmsx2pz0WqlcPPb3+PYp3BzazqCY2/yOKMb9CIXBztznYeFl7dkRDcfDH5Yq3paz8CPfRoKm1J6KmhE=
+    secure: be8QYDpvQYphDTL+G5WCsVjvVxHUtL+kG0UQRJwDkirMiU7AgZGmbnzoHQpZ+xpFjUp2BpHeni9tYRDwG/Q1cTwMcbWFslDqoZOTziMRN/H95/RyB6nJ+aJR4qgwVlV908UEODLVnPzbEeestlxse67KGCEd1JAlBQNFNhy8+tc=
   bucket: proxmate.me
   local-dir: dist
   on:
+    repo: dabido/proxmate.me
     tags: true
