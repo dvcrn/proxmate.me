@@ -27,8 +27,8 @@ angular.module('proxmatemeApp')
       isLoading: isLoading
       loadingText: loadingText
       startLoading: (text) ->
-        @isLoading = true
         @loadingText = "#{loadingPrefix} #{text}..."
+        @isLoading = true
 
       finishLoading: ->
         @isLoading = false
