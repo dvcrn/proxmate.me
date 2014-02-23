@@ -10,6 +10,7 @@ before_script:
 - bower install
 before_deploy: "grunt build"
 deploy:
+  skip_cleanup: true
   provider: s3
   access_key_id: AKIAJLDXXQGNDUKUM3PA
   secret_access_key:
