@@ -18,4 +18,4 @@ deploy:
   local-dir: dist
   on:
     repo: dabido/proxmate.me
-    tags: true
+    branch: master
