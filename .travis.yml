@@ -1,10 +1,21 @@
 language: node_js
 node_js:
-  - '0.10'
-  - '0.11'
+- '0.10'
+- '0.11'
 before_script:
-  - 'gem update --system'
-  - 'gem install sass'
-  - 'gem install compass'
-  - 'npm install -g bower grunt-cli'
-  - 'bower install'
+- gem update --system
+- gem install sass
+- gem install compass
+- npm install -g bower grunt-cli
+- bower install
+before_deploy: grunt build
+deploy:
+  provider: s3
+  access_key_id:
+    secure: Z2yPo0b3S9K0pywA5DBhNdThdw1cwclSjEAWPKZw9xMXIsHXMoA4AONatmal5PRiOrjnonHKkS2nBjjLvIXrwC25KcBHaX3sDKFL0axNFD6swL0xpo3LrlUVcYYy4hgHcEErBgQBWblEWAv67ZrELlT05Rg8dh4BC6NSb9q8FW0=
+  secret_access_key:
+    secure: DVq3BddczpzOYNBI64HqtCv1Or3UNgzkCDTjHe6Fvh/+TisKAir4o5xqaCvXj1ehKC3rtKvHZMvGMEfnVQrNuJCjXleVYmsx2pz0WqlcPPb3+PYp3BzazqCY2/yOKMb9CIXBztznYeFl7dkRDcfDH5Yq3paz8CPfRoKm1J6KmhE=
+  bucket: proxmate.me
+  local-dir: dist
+  on:
+    tags: true
