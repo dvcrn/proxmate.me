@@ -69,10 +69,11 @@ body {
 		margin: 0 auto;
 	}
 
-	h3 {
+	h3, h2 {
 		margin: 10px 0;
 		text-align: center;
 	}
+
 }
 .guide {
 	.step {
@@ -123,6 +124,7 @@ header {
 }
 
 footer {
+	margin-top: 50px;
 	color: lightgrey;
 	background: grey;
 	text-align: center;
@@ -136,13 +138,12 @@ footer {
 	display: inline-block;
 	box-shadow: 0 0 8px #bdbdbd;
 	background: rgba(200, 200, 200, 0.5);
-	margin: 5px;
+	margin: 5px 0;
 
 	a {
-		width: 260px;
 		color: black;
 		padding: 0px 10px;
-		display: table;
+		display: block;
 		line-height: 60px;
 
 		img {
@@ -152,8 +153,10 @@ footer {
 		}
 
 		p {
-			display: table-cell;
+			display: inline-block;
+			line-height: 60px;
 			vertical-align: middle;
+			margin: 0;
 		}
 	}
 }
@@ -257,4 +260,43 @@ footer {
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 	}
+}
+
+.download {
+	text-align: center;
+	margin-bottom: 35px;
+}
+
+.dlbox {
+	background: rgba(79, 151, 202, 0.75);
+	text-align: left;
+	height: 65px;
+	display: inline-block;
+	line-height: 1.7em;
+	font-size: 26px;
+	color: white;
+	border-radius: 10px;
+	padding-left: 75px;
+	// width: 300px;
+	margin: 5px 0;
+
+	span {
+		display: block;
+		font-size: 15px;
+		line-height: 5px;
+	}
+}
+
+.dlbox:hover {
+	color: white;
+	box-shadow: 0 0 10px #428cc0;
+	text-decoration: none;
+}
+
+.dlbox-chrome {
+	background: url(../images/chrome.png) no-repeat 8px 6px rgba(79, 151, 202, 0.75);
+}
+
+.dlbox-opera {
+	background: url(../images/opera.png) no-repeat 8px 6px rgba(79, 151, 202, 0.75);
 }
