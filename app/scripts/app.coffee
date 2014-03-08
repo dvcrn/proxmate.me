@@ -4,7 +4,8 @@ angular.module('proxmatemeApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'angular-carousel'
 ])
   .config ($locationProvider, $routeProvider) ->
     $locationProvider.hashPrefix('!')

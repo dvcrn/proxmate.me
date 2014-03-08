@@ -9,7 +9,7 @@
 	<div class="package-listing row">
 		<div class="package small-12 medium-6" ng-repeat="package in packages">
 			<a href="/#!/package/{{ package.id }}">
-				<img src="{{ package.smallIcon }}">
+				<img ng-src="{{ package.smallIcon }}">
 				<p>{{ package.name }}</p>
 			</a>
 		</div>

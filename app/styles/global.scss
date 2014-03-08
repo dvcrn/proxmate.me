@@ -71,3 +71,16 @@ body {
 .dlbox-opera {
 	background: url(../images/opera.png) no-repeat 8px 6px rgba(79, 151, 202, 0.75);
 }
+
+
+// angular-carousel
+.rn-carousel-control:before, .rn-carousel-control:after {
+	padding: 10px;
+	color: white;
+	border-radius: 10px;
+	background: black;
+}
+
+.rn-carousel-indicator {
+	background: black !important;
+}

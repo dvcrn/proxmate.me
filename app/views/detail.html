@@ -8,14 +8,14 @@
 	</div>
 	<hr>
 	<div class="sidebar show-for-medium-up medium-3 columns">
-		<img src="{{ packageData.bigIcon }}" alt="">
+		<img ng-src="{{ packageData.bigIcon }}" alt="">
 		<hr>
 		<a href="" class="installbutton" packageid="{{ packageData.id }}">No ProxMate installed</a>
 		<hr>
 		<h5>About this package</h5>
 		<div class="shortinfo">
 			<ul>
-				<li>Country: <span><img src="{{ packageData.country.flag }}" alt=""></span></li>
+				<li>Country: <span><img ng-src="{{ packageData.country.flag }}" alt=""></span></li>
 				<li>Author: <span><a target="_blank" href="http://twitter.com/{{ packageData.user.twitterHandle }}">{{ packageData.user.twitterHandle }}</a></span></li>
 				<li>Version: <span>{{ packageData.version }}</span></li>
 			</ul>
@@ -43,7 +43,13 @@
 			{{ packageData.description }}
 		</p>
 		<div>
-			<img src="{{ packageData.screenshots[0] }}" alt="">
+			<ul rn-carousel rn-carousel-control="true" rn-carousel-indicator="true" class="image">
+				<li ng-repeat="screenshot in packageData.screenshots">
+					<img ng-src="{{ screenshot }}" alt="">
+					<!-- <div class="layer">{{ screenshot }}</div> -->
+				</li>
+			</ul>
+
 		</div>
 	</div>
 </section>
