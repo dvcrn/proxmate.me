@@ -3,4 +3,5 @@
 angular.module('proxmatemeApp')
   .filter 'nl2br', () ->
     (input) ->
-      input.replace(/\n/g, '<br/>')
+      if input
+        input.replace(/\n/g, '<br/>')
