@@ -1,0 +1,38 @@
+.packages {
+
+}
+
+.package {
+	display: inline-block;
+	box-shadow: 0 0 8px #bdbdbd;
+	background: rgba(200, 200, 200, 0.5);
+	margin: 5px 0;
+
+	a {
+		color: black;
+		padding: 0px 10px;
+		display: block;
+		line-height: 60px;
+
+		img {
+			display: inline-block;
+			min-height: 50px;
+			min-width: 50px;
+		}
+
+		p {
+			display: inline;
+			line-height: 60px;
+			vertical-align: middle;
+			margin: 0;
+		}
+	}
+}
+
+.package-listing {
+
+}
+
+.package:hover {
+	box-shadow: 0 0 10px #428cc0;
+}

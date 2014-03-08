@@ -1,0 +1,41 @@
+
+header {
+	$header-height: 33px;
+
+	padding: 0;
+	margin: 0;
+	height: $header-height;
+
+	border-bottom: 3px solid lightgrey;
+
+	ul {
+		text-align: right;
+		li {
+			margin: 0;
+			display: inline-block;
+			a {
+				display: block;
+				line-height: $header-height;
+				padding: 0 10px;
+				margin: 0;
+				color: black;
+			}
+
+		}
+
+		li.current a {
+			background: lightgrey;
+		}
+	}
+}
+
+footer {
+	margin-top: 50px;
+	color: lightgrey;
+	background: grey;
+	text-align: center;
+
+	a {
+		color: white;
+	}
+}

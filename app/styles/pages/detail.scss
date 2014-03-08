@@ -1,0 +1,63 @@
+
+.packageIcon {
+	position: absolute;
+	right: 0;
+}
+
+.installbutton {
+	float: right;
+	width: 200px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 10px;
+	background: #B0B0B0;
+	color: grey;
+}
+
+.installbutton:hover {
+	color: white;
+}
+
+.pxm-installbutton {
+	color: white;
+    background: rgba(79,151,202,0.75);
+
+}
+
+.pxm-installbutton:hover {
+    box-shadow: 0 0 10px #428cc0;
+    color: white;
+}
+
+.sidebar {
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.shortinfo {
+		font-weight: bold;
+		span {
+			left: 120px;
+			position: absolute;
+			font-weight: normal;
+		}
+	}
+
+	.installbutton {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}
+
+.mobile-infobox {
+	border: dotted 1px red;
+	padding: 10px;
+	background: white;
+}
