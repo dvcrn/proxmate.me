@@ -1,11 +1,11 @@
 'use strict'
 
-describe 'Controller: TitleCtrl', () ->
+describe 'Controller: PageCtrl', () ->
 
   # load the controller's module
   beforeEach module 'proxmatemeApp'
 
-  TitleCtrl = {}
+  PageCtrl = {}
   scope = {}
   PageMock = {
     'asdf': 1
@@ -14,7 +14,7 @@ describe 'Controller: TitleCtrl', () ->
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    TitleCtrl = $controller 'TitleCtrl', {
+    PageCtrl = $controller 'PageCtrl', {
       $scope: scope,
       Page: PageMock
     }

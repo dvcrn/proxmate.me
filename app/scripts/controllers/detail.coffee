@@ -6,8 +6,8 @@ angular.module('proxmatemeApp')
     Page.startLoading('Package Detail View')
 
     dataFactory.getPackage($routeParams.packageId, (data) ->
+      $scope.packageData = data
       Page.setTitle("#{data.name} proxy package")
       Page.finishLoading()
-      $scope.packageData = data
     )
   ]
