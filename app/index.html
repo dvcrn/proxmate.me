@@ -46,7 +46,7 @@
     </header>
     <div ng-show="Page.isLoading" class="row">
       <div class="loading-indicator-wrapper small-12">
-        <p>{{ Page.loadingText }}</p>
+        <p ng-bind="Page.loadingText">Loading...</p>
         <div class="loading-indicator"></div>
       </div>
     </div>
