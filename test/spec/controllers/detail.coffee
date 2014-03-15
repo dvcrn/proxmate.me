@@ -53,6 +53,18 @@ describe 'Controller: DetailCtrl', () ->
     ]
   }
 
+  configMock = {
+    'DISQUS_SHORTNAME': 'foo'
+  }
+
+  locationMock = {
+    path: ->
+      return 'foo'
+
+    host: ->
+      return 'abc.de/'
+  }
+
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, _$httpBackend_, _config_, $rootScope, _dataFactory_) ->
     $httpBackend = _$httpBackend_
@@ -70,14 +82,18 @@ describe 'Controller: DetailCtrl', () ->
     DetailCtrl = $controller 'DetailCtrl', {
       $scope: scope
       $routeParams: routeParamMock,
-      Page: pageSpy
+      Page: pageSpy,
+      config: configMock,
+      $location: locationMock
     }
 
   it 'should call dataFactory with the routing param', () ->
     expect(getPackageSpy).toHaveBeenCalledWith('asdf', jasmine.any(Function))
 
-  it 'should fill the scope with packageData', () ->
+  it 'should fill the scope with the correct data', () ->
     expect(scope.packageData).toBe testPackage
+    expect(scope.disqusShortname).toBe 'foo'
+    expect(scope.disqusUrl).toBe 'http://abc.de/foo'
 
   it 'should change the page body correctly', () ->
     for pageMethod in pageMethods

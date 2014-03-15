@@ -341,6 +341,32 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+    replace: {
+      development: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('app/config/development.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          src: ['.tmp/scripts/services/config.js'],
+          dest: ''
+        }]
+      },
+      dist: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('app/config/production.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          src: ['<%= yeoman.dist %>/scripts/*.js'],
+          dest: ''
+        }]
+      }
+    },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
@@ -388,6 +414,7 @@ module.exports = function (grunt) {
       'bower-install',
       'concurrent:server',
       'autoprefixer',
+      'replace:development',
       'connect:livereload',
       'watch'
     ]);
@@ -402,6 +429,7 @@ module.exports = function (grunt) {
     'clean:server',
     'concurrent:test',
     'autoprefixer',
+    'replace:development',
     'connect:test',
     'karma'
   ]);
@@ -420,7 +448,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'replace'
   ]);
 
   grunt.registerTask('default', [

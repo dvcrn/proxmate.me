@@ -54,9 +54,10 @@
 <section class="row">
 	<div class="small-12 columns">
 		<h4>Tell us what you think!</h4>
-		 <dir-disqus disqus-shortname="proxmate-dev"
+		 <dir-disqus disqus-shortname="{{ disqusShortname }}"
 		        disqus-identifier="detail-{{ packageData.id }}"
 		        disqus-title="{{ Page.title }}"
+		        disqus-url="{{ disqusUrl }}"
 		        ready-to-bind="{{ !Page.isLoading }}">
 	 	</dir-disqus>
 	</div>

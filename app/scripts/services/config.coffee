@@ -2,5 +2,6 @@
 
 angular.module('proxmatemeApp')
   .constant 'config', {
-    'API_HOST': 'http://api.proxmate.me'
+    'API_HOST': '@@API_HOST',
+    'DISQUS_SHORTNAME': '@@DISQUS_SHORTNAME'
   }
