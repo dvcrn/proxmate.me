@@ -18,17 +18,17 @@ angular.module('proxmatemeApp', [
 
     $routeProvider
       .when '/',
-        templateUrl: 'views/main.html'
+        templateUrl: '/views/main.html'
         controller: 'MainCtrl'
       .when '/packages',
-        templateUrl: 'views/packages.html'
+        templateUrl: '/views/packages.html'
         controller: 'PackagesCtrl'
       .when '/package/:packageId',
-        templateUrl: 'views/detail.html'
+        templateUrl: '/views/detail.html'
         controller: 'DetailCtrl'
       .when '/about',
-        templateUrl: 'views/comingsoon.html'
+        templateUrl: '/views/comingsoon.html'
       .when '/donate',
-        templateUrl: 'views/comingsoon.html'
+        templateUrl: '/views/comingsoon.html'
       .otherwise
         redirectTo: '/'
