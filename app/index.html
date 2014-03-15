@@ -6,13 +6,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="fragment" content="!">
     <title ng-bind="Page.title">ProxMate :: Proxy on steroids!</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.css">
     <!-- endbuild -->
   </head>
   <body>
@@ -30,16 +31,16 @@
         <div class="small-12 medium-5 columns">
           <ul>
             <li ng-class="{current: Page.section == 'home'}">
-              <a href="/#!/">Download</a>
+              <a href="/">Download</a>
             </li>
             <li ng-class="{current: Page.section == 'packages'}">
-              <a href="/#!/packages">Packages</a>
+              <a href="/packages">Packages</a>
             </li>
             <li ng-class="{current: Page.section == 'about'}">
-              <a href="/#!/about">About</a>
+              <a href="/about">About</a>
             </li>
             <li ng-class="{current: Page.section == 'donate'}">
-              <a href="/#!/donate">Donate</a>
+              <a href="/donate">Donate</a>
             </li>
           </ul>
         </div>
@@ -54,7 +55,7 @@
 
     <section ng-hide="Page.isLoading" class="container" ng-view=""></section>
     <footer class="small-12">
-      <p>ProxMate is brought to you by <a href="mailto:contact@personalitycores.com">Personalitycores</a></p>
+      <p>Copyright &copy; 2014 <a href="mailto:contact@personalitycores.com">Personalitycores</a></p>
     </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -69,38 +70,33 @@
     </script>
 
     <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="/bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
     <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/fastclick/lib/fastclick.js"></script>
-    <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-    <script src="bower_components/foundation/js/foundation.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
-    <!-- endbower -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-carousel/dist/angular-carousel.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/services/config.js"></script>
-        <script src="scripts/services/dataFactory.js"></script>
-        <script src="scripts/controllers/packages.js"></script>
-        <script src="scripts/controllers/detail.js"></script>
-        <script src="scripts/services/Page.js"></script>
-        <script src="scripts/controllers/page.js"></script>
-        <script src="scripts/filters/nl2br.js"></script>
-        <script src="scripts/services/analytics.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/controllers/main.js"></script>
+        <script src="/scripts/services/config.js"></script>
+        <script src="/scripts/services/dataFactory.js"></script>
+        <script src="/scripts/controllers/packages.js"></script>
+        <script src="/scripts/controllers/detail.js"></script>
+        <script src="/scripts/services/Page.js"></script>
+        <script src="/scripts/controllers/page.js"></script>
+        <script src="/scripts/filters/nl2br.js"></script>
+        <script src="/scripts/services/analytics.js"></script>
         <!-- endbuild -->
 </body>
 </html>
