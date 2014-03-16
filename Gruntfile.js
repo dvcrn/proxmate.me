@@ -368,6 +368,15 @@ module.exports = function (grunt) {
       }
     },
 
+    shell: {
+      execute_prerender: {
+        options: {
+          stdout: true
+        },
+        command: 'phantomjs prerender.coffee'
+      }
+    },
+
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
     // to use the Usemin blocks.
@@ -449,7 +458,8 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin',
-    'replace'
+    'replace',
+    'shell:execute_prerender'
   ]);
 
   grunt.registerTask('default', [

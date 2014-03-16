@@ -42,7 +42,8 @@
     "karma": "~0.10.9",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "connect-modrewrite": "~0.6.4-pre",
-    "grunt-replace": "~0.7.2"
+    "grunt-replace": "~0.7.2",
+    "grunt-shell": "~0.6.4"
   },
   "engines": {
     "node": ">=0.8.0"
