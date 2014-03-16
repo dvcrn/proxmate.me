@@ -35,7 +35,9 @@ prerenderUrls = (urls) ->
     ((url) ->
       subPage = webpage.create()
       subPage.open url, ->
-        # Wait for loading indicator to disappear. We don't want to have that in our rendered pages.
+        # Wait until our container has been made visible from angularjs
+        # This only happens once all ajax requests are finished
+        # Returning false here will indicate that the page is not ready yet
         waitFor(->
           return subPage.evaluate ->
             if document.getElementsByClassName('container').length == 0
@@ -43,18 +45,21 @@ prerenderUrls = (urls) ->
 
             return document.getElementsByClassName('container')[0].offsetParent?
         , ->
+          # Strip all javascript tags out of the page. We don't want them here.
           content = subPage.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
 
+          # To quickly get the path of the url, we generate a tag and go over the href api
           el = document.createElement('a')
           el.href = url
 
           path = "./dist#{el.pathname}.prerender.html"
+          # In case the website is a root page (a.k.a http://google.com/ and not google.com/index.html)
           if el.pathname == '/'
             path = "./dist/prerender.html"
 
           fs.write(path, content, 'w+')
-          renderedUrls++
 
+          renderedUrls++
           console.info "Prerendered '#{url}' to '#{path}'"
           subPage.close()
         )
