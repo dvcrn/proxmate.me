@@ -458,7 +458,7 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin',
-    'replace'
+    'replace',
     'shell:execute_prerender'
   ]);
 
