@@ -7,7 +7,7 @@ totalUrls = 0
 # Taken from https://github.com/ariya/phantomjs/blob/master/examples/waitfor.js
 # Converted into coffee
 waitFor = (testFx, onReady, timeOutMillis) ->
-  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 3000) #< Default Max Timout is 3s
+  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 5000) #< Default Max Timout is 3s
   start = new Date().getTime()
   condition = false
   interval = setInterval(->
@@ -22,7 +22,6 @@ waitFor = (testFx, onReady, timeOutMillis) ->
         console.log "'waitFor()' timeout"
         phantom.exit 1
       else
-
         # Condition fulfilled (timeout and/or condition is 'true')
         # console.log "'waitFor()' finished in " + (new Date().getTime() - start) + "ms."
         (if typeof (onReady) is "string" then eval_(onReady) else onReady()) #< Do what it's supposed to do once the condition is fulfilled
@@ -36,13 +35,16 @@ prerenderUrls = (urls) ->
     ((url) ->
       subPage = webpage.create()
       subPage.open url, ->
-        content = subPage.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-
         # Wait for loading indicator to disappear. We don't want to have that in our rendered pages.
         waitFor(->
           return subPage.evaluate ->
-            return document.getElementsByClassName('loading-indicator-wrapper')[0].offsetParent == null
+            if document.getElementsByClassName('container').length == 0
+              return false
+
+            return document.getElementsByClassName('container')[0].offsetParent?
         , ->
+          content = subPage.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+
           el = document.createElement('a')
           el.href = url
 

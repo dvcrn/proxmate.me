@@ -458,9 +458,11 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin',
-    'replace',
+    'replace'
     'shell:execute_prerender'
   ]);
+
+  grunt.registerTask('prerender', ['shell:execute_prerender']);
 
   grunt.registerTask('default', [
     'newer:jshint',
