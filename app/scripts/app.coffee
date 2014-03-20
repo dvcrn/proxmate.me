@@ -13,7 +13,7 @@ angular.module('proxmatemeApp', [
     $locationProvider.html5Mode(true)
 
     # Temporary code for redirecting hashes to new urls
-    # TODO: remove me once browser extension is updated to new endpoints
+    # TODO: remove me once browser extension is updated to new urls
     if (window.location.hash.indexOf("#!") != -1)
       window.location = window.location.hash.substr(2)
 
