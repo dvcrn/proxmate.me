@@ -25,6 +25,8 @@ module.exports = function (grunt) {
       dist: 'dist'
     },
 
+    aws: grunt.file.readJSON('./grunt-aws.json'),
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       coffee: {
@@ -377,6 +379,23 @@ module.exports = function (grunt) {
       }
     },
 
+    aws_s3: {
+      options: {
+        accessKeyId: '<%= aws.key %>',
+        secretAccessKey: '<%= aws.secret %>',
+        bucket: '<%= aws.bucket %>',
+        params: {
+          "CacheControl": "max-age=2592000, public",
+        }
+      },
+      prod: {
+        files: [
+          {expand: true, cwd: 'dist/', src: ['**'], dest: ''},
+          {expand: true, cwd: 'dist/', src: ['**/*.html'], dest: '', params: {'CacheControl': 'max-age=3600, public'}},
+        ]
+      }
+    },
+
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
     // to use the Usemin blocks.
@@ -458,11 +477,12 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin',
-    'replace',
-    'shell:execute_prerender'
+    'replace'
   ]);
 
   grunt.registerTask('prerender', ['shell:execute_prerender']);
+
+  grunt.registerTask('deploy', ['prerender', 'aws_s3:prod'])
 
   grunt.registerTask('default', [
     'newer:jshint',
