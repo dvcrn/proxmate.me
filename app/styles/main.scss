@@ -42,6 +42,7 @@
 @import "global.scss";
 
 @media #{$small-up} {
+  @import "small/about.scss";
   @import "small/index.scss";
   @import "small/packages.scss";
   @import "small/headfoot.scss";

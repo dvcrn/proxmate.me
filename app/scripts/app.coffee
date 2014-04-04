@@ -28,7 +28,8 @@ angular.module('proxmatemeApp', [
         templateUrl: '/views/detail.html'
         controller: 'DetailCtrl'
       .when '/about',
-        templateUrl: '/views/comingsoon.html'
+        templateUrl: '/views/about.html'
+        controller: 'AboutCtrl'
       .when '/donate',
         templateUrl: '/views/comingsoon.html'
       .otherwise
