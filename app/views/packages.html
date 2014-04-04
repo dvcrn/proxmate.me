@@ -1,22 +1,23 @@
 <section class="packages row">
+	<div class="small-12 columns">
+		<h2>Welcome to the package browser!</h2>
+		<p>ProxMate has by default no packages installed. Feel free to browser around and poke what interests you :)</p>
+		<p>Packages listed here are either created or approved by the ProxMate team.</p>
 
-	<h2>Welcome to the package browser!</h2>
-	<p>ProxMate has by default no packages installed. Feel free to browser around and poke what interests you :)</p>
-	<p>Packages listed here are either created or approved by the ProxMate team.</p>
-
-	<h3>Available Packages</h3>
-	<hr>
-	<div class="package-listing row">
-		<div class="package small-12 medium-6 columns" ng-repeat="package in packages">
-			<a href="/#!/package/{{ package.id }}">
-      	<div ng-show="!package.requireKey" class="ribbon-wrapper"><div class="ribbon ribbon-green">Free</div></div>
-				<div ng-show="package.requireKey" class="ribbon-wrapper"><div class="ribbon ribbon-red">Extra</div></div>
-				<img ng-src="{{ package.smallIcon }}">
-				<div class="text-wrapper">
-					<p>{{ package.name }}</p>
-					<p class="works-at">...works at <span>{{ package.pageUrl }}</span>!</p>
-				</div>
-			</a>
+		<h3>Available Packages</h3>
+		<hr>
+		<div class="package-listing">
+			<div class="package small-12 medium-6 columns" ng-repeat="package in packages">
+				<a href="/#!/package/{{ package.id }}">
+	      	<div ng-show="!package.requireKey" class="ribbon-wrapper"><div class="ribbon ribbon-green">Free</div></div>
+					<div ng-show="package.requireKey" class="ribbon-wrapper"><div class="ribbon ribbon-red">Extra</div></div>
+					<img ng-src="{{ package.smallIcon }}">
+					<div class="text-wrapper">
+						<p>{{ package.name }}</p>
+						<p class="works-at">...works at <span>{{ package.pageUrl }}</span>!</p>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
 </section>
