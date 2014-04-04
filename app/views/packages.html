@@ -7,10 +7,14 @@
 	<h3>Available Packages</h3>
 	<hr>
 	<div class="package-listing row">
-		<div class="package small-12 medium-6" ng-repeat="package in packages">
+		<div class="package small-12 medium-6 columns" ng-repeat="package in packages">
 			<a href="/#!/package/{{ package.id }}">
+      	<div class="ribbon-wrapper"><div class="ribbon ribbon-green">Free</div></div>
 				<img ng-src="{{ package.smallIcon }}">
-				<p>{{ package.name }}</p>
+				<div class="text-wrapper">
+					<p>{{ package.name }}</p>
+					<p class="works-at">...works at <span>{{ package.pageUrl }}</span>!</p>
+				</div>
 			</a>
 		</div>
 	</div>
