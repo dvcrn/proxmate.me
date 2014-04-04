@@ -40,7 +40,18 @@
   "foundation/scss/foundation/components/visibility";
 
 @import "global.scss";
-@import "pages/index.scss";
-@import "pages/packages.scss";
-@import "pages/headfoot.scss";
-@import "pages/detail.scss";
+
+@media #{$small-up} {
+  @import "small/index.scss";
+  @import "small/packages.scss";
+  @import "small/headfoot.scss";
+  @import "small/detail.scss";
+}
+
+@media #{$medium-up} {
+  @import "medium/headfoot.scss";
+}
+
+@media #{$large-up} {
+
+}

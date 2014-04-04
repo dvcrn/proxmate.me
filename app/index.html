@@ -24,27 +24,23 @@
     <!-- Add your site or application content here -->
     <header class="small-12 columns">
       <div class="row">
-
-        <div class="small-0 medium-7 columns">
-
-        </div>
-        <div class="small-12 medium-5 columns">
-          <ul>
-            <li ng-class="{current: Page.section == 'home'}">
-              <a href="/">Download</a>
-            </li>
-            <li ng-class="{current: Page.section == 'packages'}">
-              <a href="/packages">Packages</a>
-            </li>
-            <li ng-class="{current: Page.section == 'about'}">
-              <a href="/about">About</a>
-            </li>
-            <li ng-class="{current: Page.section == 'donate'}">
-              <a href="/donate">Donate</a>
-            </li>
-          </ul>
-        </div>
+      <div class="small-centered medium-12 columns">
+        <ul>
+          <li ng-class="{current: Page.section == 'home'}">
+            <a href="/">Download</a>
+          </li>
+          <li ng-class="{current: Page.section == 'packages'}">
+            <a href="/packages">Packages</a>
+          </li>
+          <li ng-class="{current: Page.section == 'about'}">
+            <a href="/about">About</a>
+          </li>
+          <li ng-class="{current: Page.section == 'donate'}">
+            <a href="/donate">Donate</a>
+          </li>
+        </ul>
       </div>
+    </div>
     </header>
     <div ng-show="Page.isLoading" class="row">
       <div class="loading-indicator-wrapper small-12">

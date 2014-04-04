@@ -1,0 +1,15 @@
+header {
+  $header-height: 33px;
+
+  height: $header-height;
+
+  ul {
+    text-align: right;
+    li {
+      a {
+        line-height: $header-height;
+      }
+
+    }
+  }
+}

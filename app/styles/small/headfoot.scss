@@ -1,15 +1,15 @@
-
 header {
-	$header-height: 33px;
+	$header-height: 55px;
 
 	padding: 0;
-	margin: 0;
 	height: $header-height;
 
 	border-bottom: 3px solid lightgrey;
 
 	ul {
-		text-align: right;
+		margin-left: 0;
+		text-align: center;
+
 		li {
 			margin: 0;
 			display: inline-block;
