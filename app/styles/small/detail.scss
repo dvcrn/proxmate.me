@@ -20,8 +20,7 @@
 
 .pxm-installbutton {
 	color: white;
-    background: rgba(79,151,202,0.75);
-
+  background: rgba(79,151,202,0.75);
 }
 
 .pxm-installbutton:hover {
@@ -34,7 +33,7 @@
 		text-align: center;
 		margin: 0 auto;
 	}
-	
+
 	ul {
 		list-style: none;
 		padding: 0;
@@ -72,5 +71,23 @@ br {
 }
 
 .screenshot-wrapper {
-	max-width: 720px;
+	// max-width: 720px;
+}
+
+.screenshot {
+	width: 100%;
+}
+
+.comments {
+	$distance: 20px;
+	margin-top: $distance;
+	padding-top: $distance;
+	border-top: solid 1px #ddd;
+}
+
+.description-wrapper {
+	padding: 10px;
+	margin-bottom: 20px;
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
 }

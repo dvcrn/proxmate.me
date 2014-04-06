@@ -8,11 +8,15 @@
 		<a href="" class="show-for-medium-up installbutton" packageid="{{ packageData.id }}">No ProxMate installed</a>
 		<h3>{{ packageData.name }}</h3>
 		<p class="sub">Website at <a href="{{ packageData.pageUrl }}">{{ packageData.pageUrl }}</a></p>
-		<p class="description" ng-bind-html="packageData.description|nl2br"></p>
+		<div class="description-wrapper">
+			<h4>Description</h4>
+			<p class="description" ng-bind-html="packageData.description|nl2br"></p>
+		</div>
 		<div class="small-12 columns screenshot-wrapper">
+			<h4>Screenshots</h4>
 			<ul rn-carousel rn-carousel-control="true" rn-carousel-indicator="true" class="image">
 				<li ng-repeat="screenshot in packageData.screenshots">
-					<img ng-src="{{ screenshot }}" alt="">
+					<img class="screenshot" ng-src="{{ screenshot }}" alt="">
 					<!-- <div class="layer">{{ screenshot }}</div> -->
 				</li>
 			</ul>
@@ -29,13 +33,14 @@
 		<div class="shortinfo">
 			<ul>
 				<li>Country: <span><img ng-src="{{ packageData.country.flag }}" alt=""></span></li>
+				<li>Added At:<span>{{ packageData.createdAt|date:"d. MMM yyyy" }}</span></li>
 				<li>Author: <span><a target="_blank" href="http://twitter.com/{{ packageData.user.twitterHandle }}">{{ packageData.user.twitterHandle }}</a></span></li>
 				<li>Version: <span>{{ packageData.version }}</span></li>
 			</ul>
 		</div>
-		<hr>
+		<hr class="show-for-medium-up">
 		<div class="info show-for-medium-up">
-			<h5>Host matches</h5>
+			<h5>Page injector rules</h5>
 			<ul>
 				<li ng-repeat="host in packageData.hosts">{{ host }}</li>
 			</ul>
@@ -47,9 +52,15 @@
 				<li ng-repeat="domain in packageData.touchedDomains">{{ domain }}</li>
 			</ul>
 		</div>
+		<hr>
+		<div class="info">
+			<p>
+				Have some suggestions for this package? Message us <a href="mailto:proxmate@personalitycores.com?subject={{packageData.name}} suggestion ({{packageData.id}})">here</a>!
+			</p>
+		</div>
 	</div>
 </section>
-<section class="row">
+<section class="row comments">
 	<div class="small-12 columns">
 		<h4>Tell us what you think!</h4>
 		 <dir-disqus disqus-shortname="{{ disqusShortname }}"
