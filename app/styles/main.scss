@@ -47,10 +47,12 @@
   @import "small/packages.scss";
   @import "small/headfoot.scss";
   @import "small/detail.scss";
+  @import "small/support.scss";
 }
 
 @media #{$medium-up} {
   @import "medium/headfoot.scss";
+  @import "medium/support.scss";
 }
 
 @media #{$large-up} {
