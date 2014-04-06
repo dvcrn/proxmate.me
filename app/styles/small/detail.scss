@@ -30,6 +30,11 @@
 }
 
 .sidebar {
+	img {
+		text-align: center;
+		margin: 0 auto;
+	}
+	
 	ul {
 		list-style: none;
 		padding: 0;
@@ -64,4 +69,8 @@
 
 br {
 	line-height: 40px;
+}
+
+.screenshot-wrapper {
+	max-width: 720px;
 }

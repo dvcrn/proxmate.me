@@ -9,7 +9,7 @@
 		<h3>{{ packageData.name }}</h3>
 		<p class="sub">Website at <a href="{{ packageData.pageUrl }}">{{ packageData.pageUrl }}</a></p>
 		<p class="description" ng-bind-html="packageData.description|nl2br"></p>
-		<div class="small-12 columns">
+		<div class="small-12 columns screenshot-wrapper">
 			<ul rn-carousel rn-carousel-control="true" rn-carousel-indicator="true" class="image">
 				<li ng-repeat="screenshot in packageData.screenshots">
 					<img ng-src="{{ screenshot }}" alt="">

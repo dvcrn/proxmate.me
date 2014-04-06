@@ -1,5 +1,6 @@
 header {
 	$header-height: 55px;
+	background: #eee;
 
 	padding: 0;
 	height: $header-height;
@@ -13,26 +14,53 @@ header {
 		li {
 			margin: 0;
 			display: inline-block;
+
 			a {
+				text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
 				display: block;
-				line-height: $header-height;
+				line-height: $header-height - 3px;
 				padding: 0 10px;
 				margin: 0;
 				color: black;
+			}
+
+			a:hover {
+				color: inherit;
 			}
 
 		}
 
 		li.current a {
 			background: lightgrey;
+			border-bottom: solid 3px #d3916f;
 		}
 	}
 }
 
 footer {
-	text-align: center;
+	background: #eee;
+	-webkit-box-shadow: inset 0px 5px 10px -3px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    inset 0px 5px 10px -3px rgba(50, 50, 50, 0.75);
+	box-shadow:         inset 0px 5px 10px -3px rgba(50, 50, 50, 0.75);
 
-	a {
-		color: #1f90e0;
+	p {
+		margin: 0;
+		padding: 15px;
+
+		a {
+			text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+			color: #414141;
+			font-size: 30px;
+			margin-left: 20px;
+
+			span {
+				color: #7b9ebf;
+			}
+		}
+	}
+
+
+	a:hover {
+		color: inherit;
 	}
 }

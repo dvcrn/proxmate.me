@@ -42,16 +42,20 @@
       </div>
     </div>
     </header>
-    <div ng-show="Page.isLoading" class="row">
-      <div class="loading-indicator-wrapper small-12">
-        <p ng-bind="Page.loadingText">Loading...</p>
-        <div class="loading-indicator"></div>
-      </div>
-    </div>
 
-    <section ng-hide="Page.isLoading" class="container" ng-view=""></section>
+    <section class="container">
+      <div ng-show="Page.isLoading" class="row">
+        <div class="small-12 loading-indicator-wrapper">
+          <p ng-bind="Page.loadingText">Loading...</p>
+          <div class="loading-indicator"></div>
+        </div>
+      </div>
+
+      <div ng-hide="Page.isLoading" ng-view=""></div>
+    </section>
+
     <footer class="small-12">
-      <p>Copyright &copy; 2014 <a href="mailto:contact@personalitycores.com">Personalitycores</a></p>
+      <p>&copy; 2014 <a href="mailto:contact@personalitycores.com">personality<span>cores</span></a></p>
     </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -72,30 +76,33 @@
 
     <!-- build:js /scripts/vendor.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
+
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
+
     <script src="/bower_components/fastclick/lib/fastclick.js"></script>
+
     <script src="/bower_components/angular-touch/angular-touch.js"></script>
     <script src="/bower_components/angular-carousel/dist/angular-carousel.js"></script>
     <script src="/bower_components/angular-utils/src/angularUtils.js"></script>
     <script src="/bower_components/angular-utils/src/directives/disqus/dirDisqus.js"></script>
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) /scripts/scripts.js -->
-        <script src="/scripts/app.js"></script>
-        <script src="/scripts/controllers/main.js"></script>
-        <script src="/scripts/services/config.js"></script>
-        <script src="/scripts/services/dataFactory.js"></script>
-        <script src="/scripts/controllers/packages.js"></script>
-        <script src="/scripts/controllers/detail.js"></script>
-        <script src="/scripts/controllers/about.js"></script>
-        <script src="/scripts/services/Page.js"></script>
-        <script src="/scripts/controllers/page.js"></script>
-        <script src="/scripts/filters/nl2br.js"></script>
-        <script src="/scripts/services/analytics.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) /scripts/scripts.js -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/main.js"></script>
+    <script src="/scripts/services/config.js"></script>
+    <script src="/scripts/services/dataFactory.js"></script>
+    <script src="/scripts/controllers/packages.js"></script>
+    <script src="/scripts/controllers/detail.js"></script>
+    <script src="/scripts/controllers/about.js"></script>
+    <script src="/scripts/services/Page.js"></script>
+    <script src="/scripts/controllers/page.js"></script>
+    <script src="/scripts/filters/nl2br.js"></script>
+    <script src="/scripts/services/analytics.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

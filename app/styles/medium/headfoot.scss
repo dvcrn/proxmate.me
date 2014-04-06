@@ -7,7 +7,8 @@ header {
     text-align: right;
     li {
       a {
-        line-height: $header-height;
+        line-height: $header-height - 3px;
+        padding: 0 20px;
       }
 
     }

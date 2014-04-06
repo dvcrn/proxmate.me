@@ -10,14 +10,18 @@
 	height: 400px;
 	position: relative;
 	display: table;
-	box-shadow: inset 0 -5px 20px #8c8c8c;
-	border-bottom: 1px black dotted;
+	box-shadow: inset 0 -5px 10px rgba(140, 140, 140, 0.75);
+
+	h2 {
+		text-shadow: 1px 1px 1px #ccc;
+	}
 
 	.text {
 		vertical-align: middle;
 		display: table-cell;
 	}
 }
+
 .overview {
 	hr {
 		border: dotted 1px grey;
@@ -31,6 +35,7 @@
 	}
 
 }
+
 .guide {
 	.step {
 		text-align: center;
@@ -42,6 +47,7 @@
 		text-align: center;
 		margin: 10px 0;
 		min-height: 350px;
+		box-shadow: 1px 1px 2px 0 #d0d0d0;
 
 		.teaser {
 			font-weight: bold;

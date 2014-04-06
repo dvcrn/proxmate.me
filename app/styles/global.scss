@@ -4,6 +4,7 @@ body {
 }
 
 .loading-indicator-wrapper {
+	padding-bottom: 30px;
 	position: relative;
 	text-align: center;
 
@@ -20,7 +21,7 @@ body {
 		left: 50%;
 		margin: 10px auto;
 		border: solid 3px;
-		border-color: #555555 #eee;
+		border-color: #555555 white;
 		border-radius: 1000px;
 		-webkit-animation-name: rotate;
 		-webkit-animation-duration: 1.5s;
@@ -87,4 +88,10 @@ body {
 
 a {
 	color: #1f90e0;
+}
+
+.container {
+	clear: both;
+	background: white;
+	padding-bottom: 30px;
 }
