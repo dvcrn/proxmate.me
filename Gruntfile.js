@@ -371,7 +371,7 @@ module.exports = function (grunt) {
     },
 
     shell: {
-      execute_prerender: {
+      executePrerender: {
         options: {
           stdout: true
         },
@@ -385,7 +385,7 @@ module.exports = function (grunt) {
         secretAccessKey: '<%= aws.secret %>',
         bucket: '<%= aws.bucket %>',
         params: {
-          "CacheControl": "max-age=2592000, public",
+          'CacheControl': 'max-age=2592000, public',
         }
       },
       prod: {
@@ -480,9 +480,9 @@ module.exports = function (grunt) {
     'replace'
   ]);
 
-  grunt.registerTask('prerender', ['shell:execute_prerender']);
+  grunt.registerTask('prerender', ['shell:executePrerender']);
 
-  grunt.registerTask('deploy', ['prerender', 'aws_s3:prod'])
+  grunt.registerTask('deploy', ['prerender', 'aws_s3:prod']);
 
   grunt.registerTask('default', [
     'newer:jshint',
