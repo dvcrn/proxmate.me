@@ -6,7 +6,6 @@
     background-repeat: repeat-x;
     background-position-y: 56px;
     height: 128px;
-    margin-bottom: 25px;
 
     p {
       font-style: italic;
@@ -30,5 +29,17 @@
       box-shadow: 1px 1px 2px 0 #d0d0d0;
       background: white;
     }
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  .comingsoon {
+    text-align: center;
+    color: darkred;
+    font-weight: bold;
+    position: relative;
+    top: 15px;
   }
 }
