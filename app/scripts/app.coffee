@@ -6,7 +6,7 @@ angular.module('proxmatemeApp', [
   'ngSanitize',
   'ngRoute',
   'angular-carousel',
-  'angularUtils'
+  'angularUtils.directives.dirDisqus'
 ])
   .config ($locationProvider, $routeProvider) ->
     $locationProvider.hashPrefix('!')
