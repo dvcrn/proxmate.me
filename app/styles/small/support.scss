@@ -1,4 +1,12 @@
 .support {
+  .innerboxAbstract {
+    height: 150px;
+    margin: 5px 0;
+    padding: 10px;
+    box-shadow: 1px 1px 2px 0 #d0d0d0;
+    background: white;
+  }
+
   .heart {
     text-align: center;
     background: url('../images/heart-shape.png');
@@ -23,11 +31,7 @@
 
   .info-box {
     .inner {
-      height: 150px;
-      margin: 5px 0;
-      padding: 10px;
-      box-shadow: 1px 1px 2px 0 #d0d0d0;
-      background: white;
+      @extend .innerboxAbstract;
     }
   }
 
@@ -35,11 +39,56 @@
     margin-top: 20px;
   }
 
-  .comingsoon {
+  .donate {
     text-align: center;
-    color: darkred;
-    font-weight: bold;
-    position: relative;
-    top: 15px;
+    margin-top: 20px;
+
+    // h4 {
+    //   margin-top: 50px;
+    // }
+
+    .inner {
+      @extend .innerboxAbstract;
+      height: inherit;
+    }
+
+    .amount {
+      margin-bottom: 40px;
+      display: inline-block;
+      width: 100px;
+      line-height: 45px;
+      text-align: center;
+      margin-right: 10px;
+      background: lightgrey;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      transition: background 0.5s, color 0.5s;
+
+      &:hover {
+        background: white;
+        color: #414141;
+      }
+
+      &.picked {
+        color: #414141;
+        background: lightblue;
+      }
+    }
+
+    .recurring {
+      margin-bottom: 40px;
+      span {
+        margin-right: 10px;
+        label {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    strong {
+      font-size: 20px;
+      color: #414141;
+    }
   }
 }

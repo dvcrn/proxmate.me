@@ -73,6 +73,42 @@
         <p>I will write your name down and put it next to my pillow. This way I will always get reminded of <strong>what a awesome person you are</strong>!</p>
       </div>
     </div>
-    <h4 class="small-12 comingsoon">Donation system is coming soon...</h4>
+  </div>
+  <div class="donate small-12 columns">
+    <div class="inner">
+      <h2 class="small-12">Donate</h2>
+      <div class="options">
+        <h4>Select how much money you wish to donate</h4>
+        <a class="amount" ng-repeat="donationStep in donationSteps" ng-class="{ picked: donationStep == pickedDonationstep }" ng-click="pickDonationstep(donationStep)">
+          {{ donationStep }} Euro
+        </a>
+        <h4>Do you want a recurring donation or a one-time thing?</h4>
+        <div class="recurring">
+          <span>
+            <label for="one-time">One Time thing</label>
+              <input
+                id="one-time"
+                ng-click="changeRecurring(false)"
+                ng-checked="isRecurring == false"
+                type="radio"
+                name="recurring"
+              >
+          </span>
+          <span>
+            <label for="recurring">Recurring</label>
+            <input
+              id="recurring"
+              ng-click="changeRecurring(true)"
+              ng-checked="isRecurring == true"
+              type="radio"
+              name="recurring"
+            >
+          </span>
+        </div>
+        <p>You selected a <strong><span ng-hide="isRecurring">one time</span><span ng-show="isRecurring">monthly recurring</span> donation</strong> for <strong>{{ pickedDonationstep }} Euro</strong>. Is this right?</p>
+
+        <div ng-show="paypalButton != null" ng-bind-html="paypalButton"></div>
+      </div>
+    </div>
   </div>
 </section>
