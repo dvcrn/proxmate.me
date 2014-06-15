@@ -30,6 +30,7 @@ angular.module('proxmatemeApp')
 
         options.recurrence = { value: 1 }
         options.period = { value: "M" }
+        options.src = { value: 1 }
 
       $scope.paypalHtml = PAYPAL.apps.ButtonFactory.create('paypal@proxmate.me', options, type)
       $scope.paypalButton = $sce.trustAsHtml $scope.paypalHtml.outerHTML

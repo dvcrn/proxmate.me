@@ -75,5 +75,6 @@ describe 'Controller: SupportCtrl', () ->
       currency_code: { value: "EUR" },
       recurrence: { value: 1 },
       period: { value: "M" }
+      src: { value: 1 }
     }, "subscribe")
 
