@@ -106,6 +106,7 @@
           </span>
         </div>
         <p>You selected a <strong><span ng-hide="isRecurring">one time</span><span ng-show="isRecurring">monthly recurring</span> donation</strong> for <strong>{{ pickedDonationstep }} Euro</strong>. Is this right?</p>
+        <p>(1 donation is valid for 30 days)</p>
 
         <div ng-show="paypalButton != null" ng-bind-html="paypalButton"></div>
       </div>
