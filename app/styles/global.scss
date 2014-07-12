@@ -49,7 +49,7 @@ body {
 	color: white;
 	border-radius: 10px;
 	padding-left: 75px;
-	// width: 300px;
+	min-width: 300px;
 	margin: 5px 0;
 
 	span {
@@ -71,6 +71,10 @@ body {
 
 .dlbox-opera {
 	background: url(../images/opera.png) no-repeat 8px 6px rgba(79, 151, 202, 0.75);
+}
+
+.dlbox-firefox {
+	background: url(../images/firefox.png) no-repeat 8px 6px rgba(79, 151, 202, 0.75);
 }
 
 
