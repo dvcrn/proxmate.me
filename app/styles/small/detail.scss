@@ -91,3 +91,50 @@ br {
 	border-top: solid 1px #ddd;
 	border-bottom: solid 1px #ddd;
 }
+
+.installPopupWrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  overflow: scroll;
+  z-index: 2;
+
+  .installPopup {
+    margin-bottom: 15px;
+    background: #eee;
+    z-index: 3;
+    top: 15px;
+    border-radius: 12px;
+    padding-top: 20px;
+
+    .button {
+      line-height: 35px;
+      color: white;
+     	text-align: center;
+      border-radius: 10px;
+      background: rgba(79,151,202,0.75);
+      margin-bottom: 15px;
+    }
+
+    .button:hover {
+      box-shadow: 0 0 10px #428cc0;
+      color: white;
+    }
+
+    .cancelbutton {
+      background: #f36c60;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: -5px;
+    }
+  }
+}
+
