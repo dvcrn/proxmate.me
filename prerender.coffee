@@ -7,7 +7,7 @@ totalUrls = 0
 # Taken from https://github.com/ariya/phantomjs/blob/master/examples/waitfor.js
 # Converted into coffee
 waitFor = (testFx, onReady, timeOutMillis) ->
-  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 5000) #< Default Max Timout is 3s
+  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 10000) #< Default Max Timout is 3s
   start = new Date().getTime()
   condition = false
   interval = setInterval(->
@@ -40,7 +40,14 @@ prerenderUrls = (urls) ->
         # Returning false here will indicate that the page is not ready yet
         waitFor(->
           return subPage.evaluate ->
-            if document.getElementsByClassName('container').length == 0
+            # First, retrieve the container
+            container = document.getElementsByClassName('container')[0]
+            # next the loading indicator (aka first div)
+            indicator = container.getElementsByTagName('div')[0]
+            foo = container.getElementsByClassName('ng-scope').length;
+            console.info foo
+            # next, check if it contains 'ng-hide', which means it has been hidden
+            if foo == 0 or !indicator.classList.contains('ng-hide')
               return false
 
             return document.getElementsByClassName('container')[0].offsetParent?
@@ -52,10 +59,10 @@ prerenderUrls = (urls) ->
           el = document.createElement('a')
           el.href = url
 
-          path = "./dist#{el.pathname}.prerender.html"
+          path = "./prerender#{el.pathname}/index.html"
           # In case the website is a root page (a.k.a http://google.com/ and not google.com/index.html)
           if el.pathname == '/'
-            path = "./dist/prerender.html"
+            path = "./prerender/index.html"
 
           fs.write(path, content, 'w+')
 

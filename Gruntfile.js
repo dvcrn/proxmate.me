@@ -120,7 +120,8 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      prerender: 'prerender'
     },
 
     // Add vendor prefixed styles
@@ -318,6 +319,24 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }]
       },
+      prerender: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.dist %>',
+          dest: 'prerender',
+          src: [
+            '*.{ico,png,txt}',
+            '.htaccess',
+            // 'bower_components/**/*',
+            'images/*',
+            'styles/*',
+            'scripts/*',
+            'fonts/*',
+            '404.html'
+          ]
+        }]
+      },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
@@ -392,6 +411,14 @@ module.exports = function (grunt) {
         files: [
           {expand: true, cwd: 'dist/', src: ['**'], dest: ''},
           {expand: true, cwd: 'dist/', src: ['**/*.html'], dest: '', params: {'CacheControl': 'max-age=3600, public'}},
+        ]
+      },
+      prerender: {
+        options: {
+          bucket: '<%= aws.prerenderbucket %>'
+        },
+        files: [
+          {expand: true, cwd: 'prerender/', src: ['**'], dest: ''},
         ]
       }
     },
@@ -480,9 +507,15 @@ module.exports = function (grunt) {
     'replace'
   ]);
 
-  grunt.registerTask('prerender', ['shell:executePrerender']);
+  grunt.registerTask('prerender', [
+    'clean:prerender',
+    'build',
+    'shell:executePrerender',
+    'copy:prerender'
+  ]);
 
-  grunt.registerTask('deploy', ['prerender', 'aws_s3:prod']);
+  grunt.registerTask('deploy', ['aws_s3:prod']);
+  grunt.registerTask('deploy:prerender', ['prerender', 'aws_s3:prerender']);
 
   grunt.registerTask('default', [
     'newer:jshint',
