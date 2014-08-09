@@ -53,18 +53,19 @@ prerenderUrls = (urls) ->
             return document.getElementsByClassName('container')[0].offsetParent?
         , ->
           # Strip all javascript tags out of the page. We don't want them here.
-          content = subPage.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+          # content = subPage.content.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+          content = subPage.content
 
           # To quickly get the path of the url, we generate a tag and go over the href api
           el = document.createElement('a')
           el.href = url
 
-          path = "./prerender#{el.pathname}/index.html"
+          path = "./dist#{el.pathname}/index.html"
           # In case the website is a root page (a.k.a http://google.com/ and not google.com/index.html)
           if el.pathname == '/'
-            path = "./prerender/index.html"
+            path = "./dist/index.html"
 
-          fs.write(path, content, 'w+')
+          fs.write(path, content, 'w')
 
           renderedUrls++
           console.info "Prerendered '#{url}' to '#{path}'"

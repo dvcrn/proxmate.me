@@ -21,19 +21,19 @@ angular.module('proxmatemeApp', [
       .when '/',
         templateUrl: '/views/main.html'
         controller: 'MainCtrl'
-      .when '/packages',
+      .when '/packages/',
         templateUrl: '/views/packages.html'
         controller: 'PackagesCtrl'
-      .when '/package/:packageId',
+      .when '/package/:packageId/',
         templateUrl: '/views/detail.html'
         controller: 'DetailCtrl'
-      .when '/about',
+      .when '/about/',
         templateUrl: '/views/about.html'
         controller: 'AboutCtrl'
-      .when '/support',
+      .when '/support/',
         templateUrl: '/views/support.html'
         controller: 'SupportCtrl'
-      .when '/donate',
+      .when '/donate/',
         redirectTo: '/support'
       .otherwise
         redirectTo: '/'
