@@ -7,9 +7,13 @@ angular.module('proxmatemeApp')
 
     dataFactory.getPackage($routeParams.packageId, (data) ->
       $scope.packageData = data
-      $scope.disqusUrl = "http://#{$location.host() + $location.path()}"
+      $scope.disqusUrl = "https://#{$location.host() + $location.path()}"
       $scope.disqusShortname = config.DISQUS_SHORTNAME
+
       Page.setTitle("#{data.name} proxy package")
+      Page.setDescription(data.description)
+      Page.setImage(data.bigIcon)
+      Page.setPath("https://#{$location.host() + $location.path()}")
       Page.finishLoading()
     )
   ]

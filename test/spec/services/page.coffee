@@ -16,11 +16,24 @@ describe 'Service: Page', () ->
     Page.setTitle('asdf')
     expect(Page.title).toBe 'ProxMate :: asdf'
 
-  it 'should set the page section correctly', ->
+  it 'should set the page infos correctly', ->
     expect(Page.section).toBe 'home'
-
     Page.setSection('AsDfGh')
     expect(Page.section).toBe 'asdfgh'
+
+    expect(Page.description).toBe 'ProxMate is the worlds first proxy package manager that lives in your browser. Automatically install pre-defined proxy scripts, stay anonymous, mask your IP and more. All that, for free! Download now for Chrome, Firefox and Opera!'
+    Page.setDescription('asdfgh')
+    expect(Page.description).toBe 'asdfgh'
+
+    expect(Page.image).toBe '/images/proxmate-logo-single.png'
+    Page.setImage('home.jpg')
+    expect(Page.image).toBe 'home.jpg'
+
+    expect(Page.path).toBe 'https://proxmate.me/'
+    Page.setPath('https://proxmate.me/somethingelse/')
+    expect(Page.path).toBe 'https://proxmate.me/somethingelse/'
+
+
 
   it 'should handle the loadingindicator correctly', ->
     expect(Page.isLoading).toBe false

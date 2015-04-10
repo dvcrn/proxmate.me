@@ -1,4 +1,4 @@
 {
-	"API_HOST": "http://api.proxmate.me",
+	"API_HOST": "https://api.proxmate.me",
 	"DISQUS_SHORTNAME": "proxmate"
 }
