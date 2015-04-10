@@ -30,10 +30,8 @@ angular.module('proxmatemeApp', [
       .when '/about/',
         templateUrl: '/views/about.html'
         controller: 'AboutCtrl'
-      .when '/support/',
+      .when '/donate/',
         templateUrl: '/views/support.html'
         controller: 'SupportCtrl'
-      .when '/donate/',
-        redirectTo: '/support'
       .otherwise
         redirectTo: '/'

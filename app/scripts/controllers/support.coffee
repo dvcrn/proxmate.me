@@ -2,8 +2,8 @@
 
 angular.module('proxmatemeApp')
   .controller 'SupportCtrl', ['$scope', 'Page', '$sce', ($scope, Page, $sce) ->
-    Page.setSection('support')
-    Page.setTitle('Support ProxMate')
+    Page.setSection('donate')
+    Page.setTitle('Donate to ProxMate')
     $scope.donationSteps = [3, 8, 13, 21, 34, 55]
     $scope.pickedDonationstep = 3
     $scope.isRecurring = false
