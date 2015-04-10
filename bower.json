@@ -9,7 +9,7 @@
     "angular-cookies": "1.2.6",
     "angular-sanitize": "1.2.6",
     "angular-route": "1.2.6",
-    "foundation": "~5.1.1",
+    "foundation": "5.5.1",
     "angular-carousel": "~0.2.0",
     "angular-utils": "michaelbromley/angularUtils",
     "paypaljsbuttons": "~1.0.4"
