@@ -4,7 +4,7 @@ angular.module('proxmatemeApp')
   .controller 'SupportCtrl', ['$scope', '$location', 'Page', '$sce', ($scope, $location, Page, $sce) ->
     Page.setSection('donate')
     Page.setTitle('Donate to ProxMate')
-    Page.setIcon("/images/heart-shape.png")
+    Page.setImage("/images/heart-shape.png")
     Page.setDescription("Want to help the ProxMate project out a bit? Your donation is greatly appreciated!!")
     Page.setPath("https://#{$location.host() + $location.path()}")
 

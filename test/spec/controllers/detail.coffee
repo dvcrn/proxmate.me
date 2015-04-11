@@ -12,7 +12,7 @@ describe 'Controller: DetailCtrl', () ->
   dataFactory = {}
   getPackageSpy = {}
 
-  pageMethods = ['setTitle', 'setSection', 'startLoading', 'finishLoading']
+  pageMethods = ['setTitle', 'setPath', 'setSection', 'startLoading', 'finishLoading', 'setDescription', 'setImage']
   pageSpy = jasmine.createSpyObj('page', pageMethods)
   testPackage = {
     "name": "Test Package 2",
@@ -93,7 +93,7 @@ describe 'Controller: DetailCtrl', () ->
   it 'should fill the scope with the correct data', () ->
     expect(scope.packageData).toBe testPackage
     expect(scope.disqusShortname).toBe 'foo'
-    expect(scope.disqusUrl).toBe 'http://abc.de/foo'
+    expect(scope.disqusUrl).toBe 'https://abc.de/foo'
 
   it 'should change the page body correctly', () ->
     for pageMethod in pageMethods

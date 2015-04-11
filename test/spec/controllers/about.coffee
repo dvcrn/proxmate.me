@@ -8,15 +8,16 @@ describe 'Controller: AbouCtrl', () ->
   MainCtrl = {}
   scope = {}
 
-  pageMethods = ['setTitle', 'setSection', 'finishLoading']
+  pageMethods = ['setTitle', 'setSection', 'finishLoading', 'setPath']
   page = jasmine.createSpyObj('page', pageMethods)
 
   # Initialize the controller and a mock scope
-  beforeEach inject ($controller, $rootScope) ->
+  beforeEach inject ($controller, $rootScope, $location) ->
     scope = $rootScope.$new()
     MainCtrl = $controller 'AboutCtrl', {
       $scope: scope,
-      Page: page
+      Page: page,
+      $location: $location
     }
 
   it 'should change the page content correctly', () ->
