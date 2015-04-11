@@ -375,7 +375,7 @@ module.exports = function (grunt) {
         options: {
           stdout: true
         },
-        command: 'phantomjs prerender.coffee'
+        command: 'phantomjs --ssl-protocol=any --ignore-ssl-errors=yes prerender.coffee'
       }
     },
 

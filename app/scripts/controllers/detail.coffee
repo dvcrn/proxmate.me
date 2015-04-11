@@ -12,7 +12,7 @@ angular.module('proxmatemeApp')
 
       Page.setTitle("#{data.name} proxy package")
       Page.setDescription(data.description)
-      Page.setImage(data.bigIcon)
+      Page.setImage("https:#{data.bigIcon}", true)
       Page.setPath("https://#{$location.host() + $location.path()}")
       Page.finishLoading()
     )

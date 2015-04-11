@@ -7,14 +7,29 @@ describe 'Service: Page', () ->
 
   # instantiate service
   Page = {}
-  beforeEach inject (_Page_) ->
-    Page = _Page_
+
+
+  beforeEach ->
+    locationMock = {
+      host: ->
+        return 'abc.de'
+    }
+
+    module ($provide) ->
+      $provide.value('$location', locationMock)
+      return
+
+    inject (_Page_) ->
+      Page = _Page_
 
   it 'should generate the title correctly', () ->
-    expect(Page.title).toBe 'ProxMate :: Home'
+    expect(Page.title).toBe 'ProxMate - Download for Chrome, Opera and Firefox'
 
     Page.setTitle('asdf')
-    expect(Page.title).toBe 'ProxMate :: asdf'
+    expect(Page.title).toBe 'ProxMate - asdf'
+
+    Page.setTitle('asdf', true)
+    expect(Page.title).toBe 'asdf'
 
   it 'should set the page infos correctly', ->
     expect(Page.section).toBe 'home'
@@ -25,8 +40,10 @@ describe 'Service: Page', () ->
     Page.setDescription('asdfgh')
     expect(Page.description).toBe 'asdfgh'
 
-    expect(Page.image).toBe '/images/proxmate-logo-single.png'
     Page.setImage('home.jpg')
+    expect(Page.image).toBe 'https://abc.de/home.jpg'
+
+    Page.setImage('home.jpg', true)
     expect(Page.image).toBe 'home.jpg'
 
     expect(Page.path).toBe 'https://proxmate.me/'

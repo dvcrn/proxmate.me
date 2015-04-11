@@ -1,15 +1,16 @@
 'use strict'
 
 angular.module('proxmatemeApp')
-  .factory 'Page', () ->
+  .factory 'Page', ['$location', ($location) ->
     # Service logic
     # ...
 
-    titlePrefix = 'ProxMate ::'
+    titlePrefix = 'ProxMate -'
     path = "https://proxmate.me/"
-    title = "#{titlePrefix} Home"
+    title = "#{titlePrefix} Download for Chrome, Opera and Firefox"
     description = "ProxMate is the worlds first proxy package manager that lives in your browser. Automatically install pre-defined proxy scripts, stay anonymous, mask your IP and more. All that, for free! Download now for Chrome, Firefox and Opera!"
-    image = "/images/proxmate-logo-single.png"
+
+    image = "https://#{$location.host()}/images/proxmate-logo-single.png"
 
     section = 'home'
 
@@ -21,16 +22,25 @@ angular.module('proxmatemeApp')
     # Public API here
     {
       title: title
-      setTitle: (newTitle) ->
+      setTitle: (newTitle, absolute) ->
+        absolute = absolute || false
+
         @title = "#{titlePrefix} #{newTitle}"
+        if absolute
+          @title = newTitle
 
       description: description
       setDescription: (newDescription) ->
         @description = newDescription
 
       image: image
-      setImage: (newImage) ->
-        @image = newImage
+      setImage: (newImage, absolute) ->
+        absolute = absolute || false
+        @image = "https://#{$location.host()}/#{newImage}"
+
+        if absolute
+          @image = newImage
+
 
       path: path
       setPath: (newPath) ->
@@ -45,7 +55,11 @@ angular.module('proxmatemeApp')
       startLoading: (text) ->
         @loadingText = "#{loadingPrefix} #{text}..."
         @isLoading = true
+        @description = description
+        @image = image
+        @title = title
 
       finishLoading: ->
         @isLoading = false
     }
+  ]

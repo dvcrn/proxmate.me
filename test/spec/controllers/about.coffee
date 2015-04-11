@@ -8,7 +8,7 @@ describe 'Controller: AbouCtrl', () ->
   MainCtrl = {}
   scope = {}
 
-  pageMethods = ['setTitle', 'setSection', 'finishLoading', 'setPath']
+  pageMethods = ['startLoading', 'setDescription', 'setTitle', 'setSection', 'finishLoading', 'setPath']
   page = jasmine.createSpyObj('page', pageMethods)
 
   # Initialize the controller and a mock scope

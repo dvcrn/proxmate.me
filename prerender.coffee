@@ -7,7 +7,7 @@ totalUrls = 0
 # Taken from https://github.com/ariya/phantomjs/blob/master/examples/waitfor.js
 # Converted into coffee
 waitFor = (testFx, onReady, timeOutMillis) ->
-  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 10000) #< Default Max Timout is 3s
+  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 20000) #< Default Max Timout is 3s
   start = new Date().getTime()
   condition = false
   interval = setInterval(->
@@ -59,10 +59,11 @@ prerenderUrls = (urls) ->
           # To quickly get the path of the url, we generate a tag and go over the href api
           el = document.createElement('a')
           el.href = url
+          urlpath = el.hash.split("#!")[1]
 
-          path = "./dist#{el.pathname}/index.html"
+          path = "./dist#{urlpath}/index.html"
           # In case the website is a root page (a.k.a http://google.com/ and not google.com/index.html)
-          if el.pathname == '/'
+          if urlpath == '/'
             path = "./dist/index.html"
 
           fs.write(path, content, 'w')
@@ -74,7 +75,7 @@ prerenderUrls = (urls) ->
     )(url)
 
 
-page.open 'http://api.proxmate.me/url/list.json', ->
+page.open 'https://api.proxmate.me/url/list.json', ->
   jsonSource = page.plainText
   resultObject = JSON.parse(jsonSource)
   totalUrls = resultObject.length
