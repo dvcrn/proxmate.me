@@ -7,7 +7,7 @@ totalUrls = 0
 # Taken from https://github.com/ariya/phantomjs/blob/master/examples/waitfor.js
 # Converted into coffee
 waitFor = (testFx, onReady, timeOutMillis) ->
-  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 20000) #< Default Max Timout is 3s
+  maxtimeOutMillis = (if timeOutMillis then timeOutMillis else 60000) #< Default Max Timout is 3s
   start = new Date().getTime()
   condition = false
   interval = setInterval(->

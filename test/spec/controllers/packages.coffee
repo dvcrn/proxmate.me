@@ -7,7 +7,7 @@ describe 'Controller: PackagesCtrl', () ->
 
   PackagesCtrl = {}
   scope = {}
-  pageMethods = ['startLoading', 'setTitle', 'setSection', 'startLoading', 'finishLoading', 'setPath', 'setDescription']
+  pageMethods = ['startLoading', 'setTitle', 'setSection', 'startLoading', 'finishLoading', 'setDescription']
   page = jasmine.createSpyObj('page', pageMethods)
 
   dataFactoryMock = jasmine.createSpyObj('dataFactory', ['getPackages'])

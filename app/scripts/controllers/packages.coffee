@@ -11,7 +11,6 @@ angular.module('proxmatemeApp')
     dataFactory.getPackages((packages) ->
       $scope.packages = packages
       Page.setTitle("package listing")
-      Page.setPath("https://#{$location.host() + $location.path()}")
       Page.finishLoading()
     )
   ]

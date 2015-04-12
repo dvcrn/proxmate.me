@@ -58,7 +58,7 @@ angular.module('proxmatemeApp')
         @description = description
         @image = image
         @title = title
-
+        @path = "https://#{$location.host() + $location.path()}"
       finishLoading: ->
         @isLoading = false
     }

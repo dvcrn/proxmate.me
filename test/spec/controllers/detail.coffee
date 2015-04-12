@@ -12,7 +12,7 @@ describe 'Controller: DetailCtrl', () ->
   dataFactory = {}
   getPackageSpy = {}
 
-  pageMethods = ['setTitle', 'setPath', 'setSection', 'startLoading', 'finishLoading', 'setDescription', 'setImage']
+  pageMethods = ['setTitle', 'setSection', 'startLoading', 'finishLoading', 'setDescription', 'setImage']
   pageSpy = jasmine.createSpyObj('page', pageMethods)
   testPackage = {
     "name": "Test Package 2",

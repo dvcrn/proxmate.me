@@ -8,7 +8,7 @@ describe 'Controller: SupportCtrl', () ->
   MainCtrl = {}
   scope = {}
 
-  pageMethods = ['startLoading', 'setTitle', 'setSection', 'finishLoading', 'setDescription', 'setImage', 'setPath']
+  pageMethods = ['startLoading', 'setTitle', 'setSection', 'finishLoading', 'setDescription', 'setImage']
   page = jasmine.createSpyObj('page', pageMethods)
 
   paypalSpy = {

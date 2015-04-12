@@ -7,7 +7,6 @@ angular.module('proxmatemeApp')
     Page.setTitle('Donate and ensure the future of the project')
     Page.setImage("images/heart-shape.png")
     Page.setDescription("Want to help the ProxMate project out a bit? Your donation is greatly appreciated!!")
-    Page.setPath("//#{$location.host() + $location.path()}")
 
     $scope.donationSteps = [3, 8, 13, 21, 34, 55]
     $scope.pickedDonationstep = 3

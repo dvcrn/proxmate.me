@@ -13,6 +13,8 @@ describe 'Service: Page', () ->
     locationMock = {
       host: ->
         return 'abc.de'
+      path: ->
+        return 'mooh'
     }
 
     module ($provide) ->
