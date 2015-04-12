@@ -9,13 +9,13 @@
     <meta name="fragment" content="!">
 
     <title ng-bind="Page.title">ProxMate :: Proxy on steroids!</title>
-    <meta property="og:title" content="{{ Page.title }}">
+    <meta property="og:title" ng-attr-content="{{ Page.title }}">
 
-    <meta property="og:description" content="{{ Page.description }}">
-    <meta name="description" content="{{ Page.description }}">
+    <meta property="og:description" ng-attr-content="{{ Page.description }}">
+    <meta name="description" ng-attr-content="{{ Page.description }}">
 
-    <meta property="og:image" content="{{ Page.image }}">
-    <meta property="og:url" content="{{ Page.path }}">
+    <meta property="og:image" ng-attr-content="{{ Page.image }}">
+    <meta property="og:url" ng-attr-content="{{ Page.path }}">
 
 
     <meta name="viewport" content="width=device-width">
